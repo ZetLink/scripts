@@ -6,9 +6,9 @@
 export KBUILD_BUILD_USER="ZetLink"
 
 # Rutas de las herramientas de compilación
-CLANG_PATH="$PWD/clang/bin"
-GCC64_PATH="$PWD/gcc64/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9-lineage-19.1/bin"
-GCC32_PATH="$PWD/gcc32/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9-lineage-19.1/bin"
+CLANG_PATH="$PWD/../clang/bin"
+GCC64_PATH="$PWD/../gcc64/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9-lineage-19.1/bin"
+GCC32_PATH="$PWD/../gcc32/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9-lineage-19.1/bin"
 
 # Añadir al PATH
 export PATH="$CLANG_PATH:$GCC64_PATH:$GCC32_PATH:$PATH"
