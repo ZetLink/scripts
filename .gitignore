@@ -1,0 +1,4 @@
+build_kernel/DanceKernel/
+build_kernel/clang/
+build_kernel/gcc32/
+build_kernel/gcc64/
