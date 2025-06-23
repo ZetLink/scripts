@@ -1,7 +1,7 @@
 #!/bin/bash
 
-KERNEL_IMAGE="DanceKernel/out/arch/arm64/boot/Image"
-ANYKERNEL_DIR="DanceKernel/AnyKernel3"
+KERNEL_IMAGE="out/arch/arm64/boot/Image"
+ANYKERNEL_DIR="AnyKernel3"
 ZIP_NAME="DanceKernel-rhode.zip"
 
 # Verificar si el archivo compilado existe

@@ -3,6 +3,7 @@
 REPO_URL="https://github.com/SM6225-Motorola/DanceKernel.git"
 REPO_DIR="DanceKernel"
 BUILD_SCRIPT_NAME="build_sm6225.sh"
+ANYKERNEL_SCRIPT="anykernel.sh"
 
 # Verificar si la carpeta ya existe
 if [ -d "$REPO_DIR" ]; then
@@ -43,17 +44,20 @@ fi
 echo "📦 Copiando script de compilación dentro de '$REPO_DIR'..."
 cp "./$BUILD_SCRIPT_NAME" "$REPO_DIR/"
 
+# Verificar que el script de AnyKernel3 existe en el mismo lugar que este
+if [ ! -f "./$ANYKERNEL_SCRIPT" ]; then
+    echo "❌ Script de compilación '$ANYKERNEL_SCRIPT' no encontrado en el directorio actual."
+    exit 1
+fi
+
+# Copiar el script de compilación dentro del repositorio
+echo "📦 Copiando script de AnyKernel3 dentro de '$REPO_DIR'..."
+cp "./$ANYKERNEL_SCRIPT" "$REPO_DIR/"
+
 # Cambiar al directorio y ejecutar el script de compilación
 cd "$REPO_DIR" || exit 1
 echo "🚀 Ejecutando compilación..."
 bash "./$BUILD_SCRIPT_NAME"
 
-# Ejecutar el script anykernel.sh
-ANYKERNEL_SCRIPT="./anykernel.sh"
-if [ -f "$ANYKERNEL_SCRIPT" ]; then
-    echo "🚀 Ejecutando '$ANYKERNEL_SCRIPT'..."
-    bash "$ANYKERNEL_SCRIPT"
-else
-    echo "❌ Script '$ANYKERNEL_SCRIPT' no encontrado."
-    exit 1
-fi
+echo "🚀 Ejecutando '$ANYKERNEL_SCRIPT'..."
+bash "./$ANYKERNEL_SCRIPT"
