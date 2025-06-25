@@ -1,6 +1,6 @@
 # Scripts
 
-Una coleccion variadas de scripts de uso personal.
+Una coleccion de scripts de uso personal.
 
 ## Build Kernel
 
