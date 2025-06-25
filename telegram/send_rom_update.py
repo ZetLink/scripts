@@ -3,15 +3,17 @@ import re
 import json
 import os
 import subprocess
+from dotenv import load_dotenv
 
-TOKEN = '{TOKEN}'
-CHANNEL_ID = '{CHANNEL_ID}' 
+load_dotenv()
+
+TOKEN = os.getenv('TOKEN')
+CHANNEL_ID = os.getenv('CHANNEL_ID') 
 DEVICES = 'Moto G32 | G42 | G52'
 
 def escape_md(text):
     return re.sub(r'([_\*\[\]\(\)~`>\#\+\-=|{}\.!])', r'\\\1', text)
 
-# 📝 Ingreso de datos interactivos
 print("🔧 Ingreso de datos para el mensaje de Telegram")
 
 image_path = input("🖼️ Image Patch: ")
