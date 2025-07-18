@@ -4,3 +4,6 @@ build_kernel/gcc32/
 build_kernel/gcc64/
 *.webp
 *.env
+*.png
+*.jpeg
+*.jpg
