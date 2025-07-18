@@ -41,6 +41,15 @@ else:
 rom_name = input("📱 ROM Name: ")
 rom_version = input("🔢 ROM Version: ")
 patch_date = input("📅 ROM Patch: ")
+android_version = input("📱 Android Version: ")
+build_type_input = input("⚙️ Build Type (1 = Vanilla, 2 = Gapps): ")
+if build_type_input == "1":
+    build_type = "Vanilla"
+elif build_type_input == "2":
+    build_type = "Gapps"
+else:
+    print("❌ Opción inválida. Debe ser 1 o 2.")
+    exit(1)
 
 download_link_g32 = input("🔗 Download Link G32: ")
 download_link_g42 = input("🔗 Download Link G42: ")
@@ -50,7 +59,7 @@ screenshots_link = input("🖼️ Screenshots Link: ")
 
 rom_full_name = f"{rom_name} {rom_version}"
 
-message = f"""*{escape_md(rom_full_name)}* \\| Android 15 QPR2
+message = f"""*{escape_md(rom_full_name)}* \\| {escape_md(android_version)}
 Supported Devices: {escape_md(DEVICES)}
 Maintainer: [ZetLink](https://t.me/ZetLinkUwU)
 Donations: [Here](https://linktr.ee/zetlink)
@@ -59,7 +68,7 @@ Donations: [Here](https://linktr.ee/zetlink)
     \\- [English](https://android-guides.vercel.app/extra/install-rom)
     \\- [Español](https://android-guides.vercel.app/es/extra/install-rom)
 ◾️Changelogs:
-    \\- Vanilla build
+    \\- {escape_md(build_type)} build
     \\- {escape_md(patch_date)} patch
     \\- Added KernelSU NEXT
     \\- Added Dolby Atmos
